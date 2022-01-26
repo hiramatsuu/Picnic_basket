@@ -1,14 +1,14 @@
 particlesJS("particles-js",{
     "particles":{
       "number":{
-        "value":38,//この数値を変更すると幾何学模様の数が増減できる
+        "value":25,//この数値を変更すると幾何学模様の数が増減できる
         "density":{
           "enable":true,
           "value_area":800
         }
       },
       "color":{
-        "value":"#494a41"//色
+        "value":"#696969"//色
       },
       "shape":{
         "type":"polygon",//形状はpolygonを指定
@@ -46,7 +46,7 @@ particlesJS("particles-js",{
       "line_linked":{
         "enable":true,
         "distance":150,
-        "color":"#494a41",
+        "color":"#696969",
         "opacity":0.6,
         "width":1
       },

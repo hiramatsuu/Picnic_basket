@@ -1,5 +1,7 @@
 @charset "utf-8";
 @import url(https://fonts.googleapis.com/css?family=Raleway);
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap');
+
 * {
     margin: 0;
     padding: 0;
@@ -107,11 +109,68 @@ ul,li{
 .box1{
     height: 100vh;
     width: 100%;
-    background-color: rgb(121, 179, 118);
     z-index: 10;
     position:sticky;
+    background-image: url("./characters/mainp.png");
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
+/*タイトルテキストモーション*/
+.title {
+  overflow: hidden;
+  transform: translate(-100%, 0);
+  transition: transform cubic-bezier(0.215, 0.61, 0.355, 1) 0.5s;
+  color: #333;
+  font-family: 'Josefin Sans', sans-serif;
+  position: absolute;
+  bottom: 40px;
+  margin: 0;
+  right: 30px;
+}
+
+.title span {
+  display: block;
+  transform: translate(100%, 0);
+  transition: transform cubic-bezier(0.215, 0.61, 0.355, 1) 0.5s;
+}
+
+.title.-visible,
+.title.-visible span {
+  transform: translate(0, 0);
+}
+
+.sentence {
+  overflow: hidden;
+  transform: translate(-100%, 0);
+  transition: transform cubic-bezier(0.215, 0.61, 0.355, 1) 0.5s;
+  font-family: "Yu Gothic Medium";
+  font-size: 16px;
+  text-align: center;
+}
+
+.sentence span {
+  display: block;
+  transform: translate(100%, 0);
+  transition: transform cubic-bezier(0.215, 0.61, 0.355, 1) 0.5s;
+}
+
+.sentence.-visible,
+.sentence.-visible span {
+  transform: translate(0, 0);
+}
+
+
+.title span {
+  display: block;
+  transform: translate(100%, 0);
+  transition: transform cubic-bezier(0.215, 0.61, 0.355, 1) 0.5s;
+}
+
+.title.-visible,
+.title.-visible span {
+  transform: translate(0, 0);
+}
 
 .scrolldown4{
   /*描画位置※位置は適宜調整してください*/
@@ -136,7 +195,7 @@ position: absolute;
 left:-20px;
 bottom:10px;
   /*テキストの形状*/
-color: #eee;
+color: rgb(70, 97, 77);
 font-size: 0.7rem;
 letter-spacing: 0.05em;
 /*縦書き設定*/
@@ -155,7 +214,7 @@ letter-spacing: 0.05em;
   /*矢印の形状*/
   width: 1px;
   height: 20px;
-  background: #eee;
+  background: rgb(70, 97, 77);
   transform: skewX(-31deg);
 }
 
@@ -168,7 +227,7 @@ right:0;
   /*矢印の形状*/
 width:1px;
 height: 50px;
-background:#eee;
+background:rgb(70, 97, 77);
 }
 
 .box2{
@@ -188,7 +247,7 @@ background:#eee;
 
 .box3 {
     width: 100%;
-    height: 4400px;
+    height: 3400px;
     background-color: rgb(226, 226, 226);
 
 }
@@ -202,19 +261,19 @@ background:#eee;
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  padding:50px 20px;
+  padding:70px 20px;
 }
 
 .sort-btn li{
-  background:rgb(88, 63, 63);
+  background:rgb(243, 235, 235);
   border-radius:10px;
   cursor: pointer;
-  padding: 10px;
-  margin:0 10px;
+  padding:10px 40px;
+  margin:0 30px;
 }
 
 .sort-btn li.active{/*ボタンに現在地＝activeというクラス名がついたら背景色を変更*/
-  background:#ccc;  
+  background:rgb(160, 159, 159);  
 }
 
 
@@ -247,7 +306,7 @@ background:#eee;
   position: absolute;
   z-index: 2;
   width: 33%; /* アイテムの幅 */
-  padding: 80px;
+  padding: 2em;
 }
 
 /*内側のボックスの高さが崩れないように維持*/
@@ -273,7 +332,12 @@ background:#eee;
 /*横幅が768px以下になった際の指定*/
 @media only screen and (max-width: 768px) {
 .item {
-  width: 90%;/*横並びで2つ表示*/
+  width: 50%;/*横並びで2つ表示*/
+  padding: 1em;
+
+}
+.box3{
+  height: 2700px;
 }
 }
 
@@ -411,7 +475,8 @@ a:active{
 
 h1{
   text-align: center;
-  font-size:6vw;
+  color: #333;
+  font-size: 60px;
   letter-spacing: 0.1em;
   text-transform: uppercase;
   margin:30px 0;
@@ -508,4 +573,19 @@ p{
   position: fixed;
   top: 0;
   left: 0;
+}
+
+.item-content{
+  width: 70%;
+  height: 90%;
+}
+
+@media screen and (max-width: 1024px){
+  .box1{
+    background-image: url("./characters/maini.png");
+    background-position-y: 40px;
+  }
+  .box3{
+    height: 2200px;
+  }
 }
